@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruct Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Conthey Extra Bold';
+      src: url('/static/BebasNeue-Regular.ttf') format('truetype'); /* Replace with your font file path */
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('/static/Lora-VariableFont_wght.ttf') format('truetype'); /* Replace with your font file path */
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .font-lora {
+      font-family: 'Lora', sans-serif;
+    }
+    .font-conthey {
+      font-family: 'Conthey Extra Bold', sans-serif;
+    }
+
+    /* Style for logo container to position it left of the text */
+    .logo-container {
+      position: absolute;
+      left: 0; /* Align logo to the left */
+      top: 50%; /* Vertically center the logo */
+      transform: translateY(-50%); /* Fine-tune vertical centering */
+      z-index: 20; /* Ensure it's above the navbar */
+    }
+
+    .logo {
+      width: 80px; /* Adjust size of the logo */
+    }
+
+    /* Typing effect */
+    .typing-effect {
+      border-right: 4px solid #fff;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 relative">
+        <!-- Logo -->
+        <div class="logo-container">
+          <img src="static/logo.png" alt="Logo" class="logo" />
+        </div>
+
+        <!-- Text Logo (Instruct Space) -->
+        <div class="flex-shrink-0 ml-20 relative z-10">
+          <a href="#" class="text-3xl font-bold tracking-wider">Instruct Space</a>
+        </div>
+
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-6 h-16">
+          <a href="#about" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            About Us
+          </a>
+          <a href="#team" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            Team
+          </a>
+          <a href="#news" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            News
+          </a>
+          <a href="#stories" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            Stories
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
+      <a href="#about" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
+      <a href="#team" class="block px-4 py-2 hover:bg-gray-600">Team</a>
+      <a href="#news" class="block px-4 py-2 hover:bg-gray-600">News</a>
+      <a href="#stories" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
+    </div>
+  </nav>
+
+<!-- Hero Section -->
+<header class="relative bg-cover bg-center h-screen text-white" style="background-image: url('/static/pexels-thomas-chauke-437438-3207532.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+      <h1 class="text-4xl md:text-6xl font-bold font-conthey leading-tight mb-6">
+        <span class="typing-effect">Instruct Space Initiative</span>
+      </h1>
+      <p class="text-lg md:text-2xl max-w-2xl mb-8 font-lora">
+        Empowering Kids with Quality Schools and Thriving Communities.
+      </p>
+      <!-- Edited Learn More Button -->
+      <a href="#about" class="font-lora py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-yellow-500">
+        About us
+      </a>
+    </div>
+  </header>
+  
+  
+  
+
+  <!-- About Section -->
+  <main class="py-16 px-6">
+    <section id="about" class="text-center max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 font-conthey mb-4">
+        About Us
+      </h2>
+      <p class="font-lora text-gray-600 leading-relaxed">
+        At Instruct Space, our mission is to advance education and promote sustainable development around the globe.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="font-lora text-white text-center py-6">
+    <p>&copy; 2025 Instruct Space. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
