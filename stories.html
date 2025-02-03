@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruct Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Conthey Extra Bold';
+      src: url('/static/BebasNeue-Regular.ttf') format('truetype'); /* Replace with your font file path */
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('/static/Lora-VariableFont_wght.ttf') format('truetype'); /* Replace with your font file path */
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .font-lora {
+      font-family: 'Lora', sans-serif;
+    }
+    .font-conthey {
+      font-family: 'Conthey Extra Bold', sans-serif;
+    }
+
+    /* Style for logo container to position it left of the text */
+    .logo-container {
+      position: absolute;
+      left: 0; /* Align logo to the left */
+      top: 50%; /* Vertically center the logo */
+      transform: translateY(-50%); /* Fine-tune vertical centering */
+      z-index: 20; /* Ensure it's above the navbar */
+    }
+
+    .logo {
+      width: 80px; /* Adjust size of the logo */
+    }
+
+    /* Typing effect */
+    .typing-effect {
+      border-right: 4px solid #fff;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<!-- Navbar -->
+<nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 relative">
+        <!-- Logo -->
+        <div class="logo-container">
+          <img src="static/logo.png" alt="Logo" class="logo" />
+        </div>
+
+        <!-- Text Logo (Instruct Space) -->
+        <div class="flex-shrink-0 ml-20 relative z-10">
+          <a href="index.html" class="text-3xl font-bold tracking-wider">Instruct Space</a>
+        </div>
+
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-6 h-16">
+          <a href="#about" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            About Us
+          </a>
+          <a href="#team" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            Team
+          </a>
+          <a href="#news" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            News
+          </a>
+          <a href="#stories" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+            Stories
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
+      <a href="#about" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
+      <a href="#team" class="block px-4 py-2 hover:bg-gray-600">Team</a>
+      <a href="#news" class="block px-4 py-2 hover:bg-gray-600">News</a>
+      <a href="#stories" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
+    </div>
+  </nav>
+
+  <body>
+    <!-- Navbar (reuse the same navbar code from the homepage) -->
+
+<!-- Navbar (reuse the same navbar code from the homepage) -->
+
+<!-- Hero Section -->
+<section id="hero" class="bg-cover bg-center py-24 px-6 relative text-center" style="background-image: url('/static/hero-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
+    <div class="relative z-10 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Latest Stories</h1>
+      <p class="text-lg md:text-xl opacity-80">Explore inspiring journeys and experiences from our programs that are shaping a brighter future for children.</p>
+    </div>
+  </section>
+  
+  <!-- Stories Section -->
+  <section id="stories" class="py-16 px-6 bg-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 font-conthey mb-12">
+        Read Our Transformative Stories
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Story Card 1 -->
+        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/1'">
+          <img src="/static/story-image-1.jpg" alt="Story 1" class="w-full h-56 object-cover rounded-t-lg">
+          <div class="p-6 bg-white rounded-b-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Journey to a New Beginning</h3>
+            <p class="text-gray-600 mt-2">
+              A heartwarming story of a child who overcame immense challenges to pursue their dreams of education and a better future.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Story Card 2 -->
+        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/2'">
+          <img src="/static/story-image-2.jpg" alt="Story 2" class="w-full h-56 object-cover rounded-t-lg">
+          <div class="p-6 bg-white rounded-b-lg">
+            <h3 class="text-xl font-semibold text-gray-800">A Healthy Future</h3>
+            <p class="text-gray-600 mt-2">
+              This is the story of how access to healthcare helped a young girl get back on track and reclaim her potential.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Story Card 3 -->
+        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/3'">
+          <img src="/static/story-image-3.jpg" alt="Story 3" class="w-full h-56 object-cover rounded-t-lg">
+          <div class="p-6 bg-white rounded-b-lg">
+            <h3 class="text-xl font-semibold text-gray-800">The Power of Nutrition</h3>
+            <p class="text-gray-600 mt-2">
+              Discover how access to proper nutrition made a difference in the life of a child struggling with health issues.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (reuse the same footer code from the homepage) -->
+  
+  
+  <!-- Footer (reuse the same footer code from the homepage) -->
+  
+  </body>
