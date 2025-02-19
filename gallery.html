@@ -86,56 +86,62 @@
     <!-- Navbar -->
     <nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 relative">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <img src="static/logo.png" alt="Logo" class="logo" />
-                </div>
-
-                <!-- Text Logo (Instruct Space) -->
-                <div class="flex-shrink-0 ml-20 relative z-10">
-                    <a href="/index.html" class="text-3xl tracking-wider">Instruct Space</a>
-                </div>
-
-                <!-- Menu -->
-                <div class="hidden md:flex space-x-6 h-16">
-                    <a href="/index.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-                        Home
-                    </a>
-                    <a href="/about.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-                        About Us
-                    </a>
-                    <a href="/team.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-                        Team
-                    </a>
-                    <a href="/stories.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-                        Stories
-                    </a>
-                    <a href="/gallery.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-                        Gallery
-                      </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="focus:outline-none">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
+          <div class="flex justify-between items-center h-16 relative">
+            <!-- Logo -->
+            <div class="logo-container">
+              <img src="static/logo.png" alt="Logo" class="logo" />
             </div>
+    
+            <!-- Text Logo (Instruct Space) -->
+            <div class="flex-shrink-0 ml-20 relative z-10">
+              <a href="/index.html" class="text-3xl">Instruct Space</a>
+            </div>
+    
+            <!-- Menu -->
+            <div class="hidden md:flex h-16">
+              <a href="/index.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+                Home
+              </a>
+              <a href="/about.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+                About Us
+              </a>
+              <a href="/team.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+                Team
+              </a>
+              <a href="/stories.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+                Stories
+              </a>
+              <a href="/gallery.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+                Gallery
+              </a>
+    
+              <!-- Donate Button -->
+              <a href="https://www.mchanga.africa/fundraiser/106486" class="flex items-center px-6 py-2 bg-yellow-500 text-white text-3xl rounded-lg hover:bg-blue-600 transition duration-300">
+                Donate
+              </a>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+              <button id="mobile-menu-button" class="focus:outline-none">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-
+    
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
-            <a href="/index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
-            <a href="/about.html" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
-            <a href="/team.html" class="block px-4 py-2 hover:bg-gray-600">Team</a>
-            <a href="/stories.html" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
-            <a href="/gallery.html" class="block px-4 py-2 hover:bg-gray-600">Gallery</a>
+          <a href="/index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+          <a href="/about.html" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
+          <a href="/team.html" class="block px-4 py-2 hover:bg-gray-600">Team</a>
+          <a href="/stories.html" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
+          <a href="/gallery.html" class="block px-4 py-2 hover:bg-gray-600">Gallery</a>
+          <a href="https://www.mchanga.africa/fundraiser/106486" class="block px-4 py-2 hover:bg-gray-600 bg-yellow-500 text-white rounded-lg">Donate</a>
         </div>
-    </nav>
+      </nav>
 
     <!-- Gallery Section -->
     <section class="py-16 px-6">
@@ -279,6 +285,7 @@
                         <li><a href="/team.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Team</a></li>
                         <li><a href="/stories.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Stories</a></li>
                         <li><a href="/gallery.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Gallery</a></li>
+                        <li><a href="https://www.mchanga.africa/fundraiser/106486" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Donate</a></li>
                     </ul>
                 </div>
 

@@ -1,142 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instruct Space</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @font-face {
-      font-family: 'Conthey Extra Bold';
-      src: url('/static/BebasNeue-Regular.ttf') format('truetype'); /* Replace with your font file path */
-    }
-    @font-face {
-      font-family: 'Lora';
-      src: url('/static/Lora-VariableFont_wght.ttf') format('truetype'); /* Replace with your font file path */
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    .font-lora {
-      font-family: 'Lora', sans-serif;
-    }
-    .font-conthey {
-      font-family: 'Conthey Extra Bold', sans-serif;
-    }
-
-    /* Style for logo container to position it left of the text */
-    .logo-container {
-      position: absolute;
-      left: 0; /* Align logo to the left */
-      top: 50%; /* Vertically center the logo */
-      transform: translateY(-50%); /* Fine-tune vertical centering */
-      z-index: 20; /* Ensure it's above the navbar */
-    }
-
-    .logo {
-      width: 80px; /* Adjust size of the logo */
-    }
-
-    /* Typing effect */
-    .typing-effect {
-      border-right: 4px solid #fff;
-      display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruct Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @font-face {
+        font-family: 'Conthey Extra Bold';
+        src: url('/static/BebasNeue-Regular.ttf') format('truetype');
       }
-      to {
-        width: 100%;
+  
+      @font-face {
+        font-family: 'Lora';
+        src: url('/static/Lora-VariableFont_wght.ttf') format('truetype');
       }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
+  
+      body {
+        font-family: 'Open Sans', sans-serif;
       }
-    }
-  </style>
-</head>
-<body class="bg-gray-50 font-sans">
-
-  <!-- Navbar -->
-  <nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 relative">
-        <!-- Logo -->
-        <div class="logo-container">
-          <img src="static/logo.png" alt="Logo" class="logo" />
-        </div>
-
-        <!-- Text Logo (Instruct Space) -->
-        <div class="flex-shrink-0 ml-20 relative z-10">
-          <a href="/index.html" class="text-3xl">Instruct Space</a>
-        </div>
-
-        <!-- Menu -->
-        <div class="hidden md:flex space-x-6 h-16">
-          <a href="/index.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            Home
-          </a>
-          <a href="/about.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            About Us
-          </a>
-          <a href="/team.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            Team
-          </a>
-          <a href="/stories.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            Stories
-          </a>
-          <a href="/gallery.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            Gallery
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="focus:outline-none">
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
+  
+      .font-lora {
+        font-family: 'Lora', sans-serif;
+      }
+  
+      .font-conthey {
+        font-family: 'Conthey Extra Bold', sans-serif;
+      }
+  
+      /* Style for logo container to position it left of the text */
+      .logo-container {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+      }
+  
+      .logo {
+        width: 80px;
+      }
+  
+      /* Typing effect */
+      .typing-effect {
+        border-right: 4px solid #fff;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+      }
+  
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+  
+        to {
+          width: 100%;
+        }
+      }
+  
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-gray-50 font-sans">
+  
+    <!-- Navbar -->
+    <nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 relative">
+          <!-- Logo -->
+          <div class="logo-container">
+            <img src="static/logo.png" alt="Logo" class="logo" />
+          </div>
+  
+          <!-- Text Logo (Instruct Space) -->
+          <div class="flex-shrink-0 ml-20 relative z-10">
+            <a href="/index.html" class="text-3xl">Instruct Space</a>
+          </div>
+  
+          <!-- Menu -->
+          <div class="hidden md:flex h-16">
+            <a href="/index.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+              Home
+            </a>
+            <a href="/about.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+              About Us
+            </a>
+            <a href="/team.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+              Team
+            </a>
+            <a href="/stories.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+              Stories
+            </a>
+            <a href="/gallery.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+              Gallery
+            </a>
+  
+            <!-- Donate Button -->
+            <a href="https://www.mchanga.africa/fundraiser/106486" class="flex items-center px-6 py-2 bg-yellow-500 text-white text-3xl rounded-lg hover:bg-blue-600 transition duration-300">
+              Donate
+            </a>
+          </div>
+  
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
-      <a href="/index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
-      <a href="/about.html" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
-      <a href="/team.html" class="block px-4 py-2 hover:bg-gray-600">Team</a>
-      <a href="/stories.html" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
-      <a href="/gallery.html" class="block px-4 py-2 hover:bg-gray-600">Gallery</a>
-    </div>
-  </nav>
+  
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
+        <a href="/index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+        <a href="/about.html" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
+        <a href="/team.html" class="block px-4 py-2 hover:bg-gray-600">Team</a>
+        <a href="/stories.html" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
+        <a href="/gallery.html" class="block px-4 py-2 hover:bg-gray-600">Gallery</a>
+        <a href="https://www.mchanga.africa/fundraiser/106486" class="block px-4 py-2 hover:bg-gray-600 bg-yellow-500 text-white rounded-lg">Donate</a>
+      </div>
+    </nav>
 
 <!-- Hero Section -->
 <header class="relative bg-cover bg-center h-screen text-white" style="background-image: url('/static/ato-aikins-SQ6jgZTEeVk-unsplash.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-      <h1 class="text-6xl sm:text-7xl md:text-6xl lg:text-6xl font-bold font-conthey leading-tight mb-6 uppercase">
-        <span class="block md:inline">Instruct</span>
-        <span class="block md:inline">Space</span>
-        <span class="block md:inline">Initiative</span>
-      </h1>
-      <p class="text-lg md:text-2xl max-w-2xl mb-8 font-lora">
-        Empowering Kids with Quality Schools and Thriving Communities.
-      </p>
-      <!-- Edited Learn More Button -->
-      <a href="#about" class="font-lora py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+    <h1 class="text-6xl sm:text-7xl md:text-6xl lg:text-6xl font-bold font-conthey leading-tight mb-6 uppercase">
+      <span class="block md:inline">Instruct</span>
+      <span class="block md:inline">Space</span>
+      <span class="block md:inline">Initiative</span>
+    </h1>
+    <p class="text-lg md:text-2xl max-w-2xl mb-8 font-lora">
+      Empowering Kids with Quality Schools and Thriving Communities.
+    </p>
+    
+    <!-- Button Container -->
+    <div class="flex space-x-4">
+      <!-- About Us Button -->
+      <a href="/about.html" class="font-lora py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500">
         About us
       </a>
+      
+      <!-- Donate Button -->
+      <a href="https://www.mchanga.africa/fundraiser/106486" class="font-lora py-4 px-8 bg-yellow-500 text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-blue-600">
+        Donate
+      </a>
     </div>
-  </header>
+  </div>
+</header>
+
 
 <!-- Cards Section -->
 <section id="impact" class="relative py-16 px-6 bg-gray-100 overflow-hidden">
@@ -269,11 +290,13 @@
         <div class="flex flex-col items-center md:items-start">
           <h3 class="text-2xl font-semibold text-gray-800 mb-4">Quick Links</h3>
           <ul class="space-y-4">
-            <li><a href="/about.html" class="font-lora hover:text-blue-500 transform hover:translate-x-2 transition duration-300">About Us</a></li>
-            <li><a href="/team.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Team</a></li>
-            <li><a href="/stories.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">News and Stories</a></li>
+              <li><a href="/about.html" class="font-lora hover:text-blue-500 transform hover:translate-x-2 transition duration-300">About Us</a></li>
+              <li><a href="/team.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Team</a></li>
+              <li><a href="/stories.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Stories</a></li>
+              <li><a href="/gallery.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Gallery</a></li>
+              <li><a href="https://www.mchanga.africa/fundraiser/106486" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Donate</a></li>
           </ul>
-        </div>
+      </div>
   
         <!-- Column 3: Call to Action -->
         <div class="flex flex-col items-center md:items-start">
