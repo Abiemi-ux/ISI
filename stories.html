@@ -1,70 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instruct Space</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @font-face {
-      font-family: 'Conthey Extra Bold';
-      src: url('/static/BebasNeue-Regular.ttf') format('truetype'); /* Replace with your font file path */
-    }
-    @font-face {
-      font-family: 'Lora';
-      src: url('/static/Lora-VariableFont_wght.ttf') format('truetype'); /* Replace with your font file path */
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    .font-lora {
-      font-family: 'Lora', sans-serif;
-    }
-    .font-conthey {
-      font-family: 'Conthey Extra Bold', sans-serif;
-    }
-
-    /* Style for logo container to position it left of the text */
-    .logo-container {
-      position: absolute;
-      left: 0; /* Align logo to the left */
-      top: 50%; /* Vertically center the logo */
-      transform: translateY(-50%); /* Fine-tune vertical centering */
-      z-index: 20; /* Ensure it's above the navbar */
-    }
-
-    .logo {
-      width: 80px; /* Adjust size of the logo */
-    }
-
-    /* Typing effect */
-    .typing-effect {
-      border-right: 4px solid #fff;
-      display: inline-block;
-      white-space: nowrap;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruct Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'Conthey Extra Bold';
+        src: url('/static/BebasNeue-Regular.ttf') format('truetype'); /* Replace with your font file path */
+      }
+      @font-face {
+        font-family: 'Lora';
+        src: url('/static/Lora-VariableFont_wght.ttf') format('truetype'); /* Replace with your font file path */
+      }
+  
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .font-lora {
+        font-family: 'Lora', sans-serif;
+      }
+      .font-conthey {
+        font-family: 'Conthey Extra Bold', sans-serif;
+      }
+  
+      /* Style for logo container to position it left of the text */
+      .logo-container {
+        position: absolute;
+        left: 0; /* Align logo to the left */
+        top: 50%; /* Vertically center the logo */
+        transform: translateY(-50%); /* Fine-tune vertical centering */
+        z-index: 20; /* Ensure it's above the navbar */
+      }
+  
+      .logo {
+        width: 80px; /* Adjust size of the logo */
+      }
+  
+      /* Typing effect */
+      .typing-effect {
+        border-right: 4px solid #fff;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+      }
+      .story-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      border-radius: 12px;
       overflow: hidden;
-      animation: typing 3.5s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+      cursor: pointer;
     }
+    .story-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    }
+    .story-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      z-index: 10;
+    }
+    .read-more {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+    .read-more:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+  
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+  </head>
+<body>
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-  </style>
-</head>
-<!-- Navbar -->
-<nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
+  <!-- Navbar -->
+  <nav class="bg-[#f4f3f0] text-gray-900 uppercase font-conthey relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16 relative">
         <!-- Logo -->
@@ -74,7 +115,7 @@
 
         <!-- Text Logo (Instruct Space) -->
         <div class="flex-shrink-0 ml-20 relative z-10">
-          <a href="index.html" class="text-3xl font-bold tracking-wider">Instruct Space</a>
+          <a href="/index.html" class="text-3xl tracking-wider">Instruct Space</a>
         </div>
 
         <!-- Menu -->
@@ -82,13 +123,10 @@
           <a href="#about" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
             About Us
           </a>
-          <a href="#team" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+          <a href="/team.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
             Team
           </a>
-          <a href="#news" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
-            News
-          </a>
-          <a href="#stories" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
+          <a href="/stories.html" class="flex items-center px-6 h-full text-3xl hover:bg-gray-700 hover:text-white transition duration-300">
             Stories
           </a>
         </div>
@@ -106,73 +144,167 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white">
-      <a href="#about" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
-      <a href="#team" class="block px-4 py-2 hover:bg-gray-600">Team</a>
-      <a href="#news" class="block px-4 py-2 hover:bg-gray-600">News</a>
-      <a href="#stories" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
+      <a href="/about.html" class="block px-4 py-2 hover:bg-gray-600">About Us</a>
+      <a href="/team.html" class="block px-4 py-2 hover:bg-gray-600">Team</a>
+      <a href="/stories.html" class="block px-4 py-2 hover:bg-gray-600">Stories</a>
     </div>
   </nav>
 
-  <body>
-    <!-- Navbar (reuse the same navbar code from the homepage) -->
+<!-- Stories Section -->
+<section id="stories" class="relative py-16 px-6 bg-gray-100 overflow-hidden">
+  <!-- Top Pattern -->
+  
 
-<!-- Navbar (reuse the same navbar code from the homepage) -->
+  <div class="max-w-7xl mx-auto relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
+      Inspiring Stories from Our Community
+    </h2>
 
-<!-- Hero Section -->
-<section id="hero" class="bg-cover bg-center py-24 px-6 relative text-center" style="background-image: url('/static/hero-bg.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
-    <div class="relative z-10 text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Latest Stories</h1>
-      <p class="text-lg md:text-xl opacity-80">Explore inspiring journeys and experiences from our programs that are shaping a brighter future for children.</p>
-    </div>
-  </section>
-  
-  <!-- Stories Section -->
-  <section id="stories" class="py-16 px-6 bg-gray-100">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 font-conthey mb-12">
-        Read Our Transformative Stories
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Story Card 1 -->
-        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/1'">
-          <img src="/static/story-image-1.jpg" alt="Story 1" class="w-full h-56 object-cover rounded-t-lg">
-          <div class="p-6 bg-white rounded-b-lg">
-            <h3 class="text-xl font-semibold text-gray-800">Journey to a New Beginning</h3>
-            <p class="text-gray-600 mt-2">
-              A heartwarming story of a child who overcame immense challenges to pursue their dreams of education and a better future.
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Story 1 -->
+      <div class="card opacity-0 translate-y-10 transition-all duration-700 ease-out shadow-lg hover:shadow-2xl hover:scale-105 h-80 rounded-lg relative flex flex-col">
+        <div class="absolute inset-0 bg-[url('/static/story1.jpg')] bg-cover bg-center rounded-lg"></div>
+        <div class="absolute inset-0 bg-blue-600 bg-opacity-60 group-hover:bg-opacity-60 transition duration-300 rounded-lg"></div>
+        <div class="relative z-10 p-6 flex flex-col justify-between text-center text-white rounded-lg flex-grow">
+          <div>
+            <h3 class="text-2xl font-bold text-shadow-lg">A Selfless Brother's struggle</h3>
+            <p class="mt-2 text-base text-shadow-lg font-bold">
+              Discover how education transformed the life of a young student against all odds.
             </p>
           </div>
+          <a href="/story1.html" class="py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500 mt-4">
+            Read More
+          </a>
         </div>
-  
-        <!-- Story Card 2 -->
-        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/2'">
-          <img src="/static/story-image-2.jpg" alt="Story 2" class="w-full h-56 object-cover rounded-t-lg">
-          <div class="p-6 bg-white rounded-b-lg">
-            <h3 class="text-xl font-semibold text-gray-800">A Healthy Future</h3>
-            <p class="text-gray-600 mt-2">
-              This is the story of how access to healthcare helped a young girl get back on track and reclaim her potential.
+      </div>
+
+      <!-- Story 2 -->
+      <div class="card opacity-0 translate-y-10 transition-all duration-700 ease-out shadow-lg hover:shadow-2xl hover:scale-105 h-80 rounded-lg relative flex flex-col">
+        <div class="absolute inset-0 bg-[url('/static/story2.jpg')] bg-cover bg-center rounded-lg"></div>
+        <div class="absolute inset-0 bg-green-600 bg-opacity-60 group-hover:bg-opacity-60 transition duration-300 rounded-lg"></div>
+        <div class="relative z-10 p-6 flex flex-col justify-between text-center text-white rounded-lg flex-grow">
+          <div>
+            <h3 class="text-2xl font-bold text-shadow-lg">Breaking Barriers</h3>
+            <p class="mt-2 text-base text-shadow-lg font-bold">
+              A young leader's story of resilience and community empowerment.
             </p>
           </div>
+          <a href="#" class="py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-green-500 hover:border-green-500 mt-4">
+            Read More
+          </a>
         </div>
-  
-        <!-- Story Card 3 -->
-        <div class="card shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg relative cursor-pointer" onclick="window.location.href='/story/3'">
-          <img src="/static/story-image-3.jpg" alt="Story 3" class="w-full h-56 object-cover rounded-t-lg">
-          <div class="p-6 bg-white rounded-b-lg">
-            <h3 class="text-xl font-semibold text-gray-800">The Power of Nutrition</h3>
-            <p class="text-gray-600 mt-2">
-              Discover how access to proper nutrition made a difference in the life of a child struggling with health issues.
+      </div>
+
+      <!-- Story 3 -->
+      <div class="card opacity-0 translate-y-10 transition-all duration-700 ease-out shadow-lg hover:shadow-2xl hover:scale-105 h-80 rounded-lg relative flex flex-col">
+        <div class="absolute inset-0 bg-[url('/static/story3.jpg')] bg-cover bg-center rounded-lg"></div>
+        <div class="absolute inset-0 bg-red-600 bg-opacity-60 group-hover:bg-opacity-60 transition duration-300 rounded-lg"></div>
+        <div class="relative z-10 p-6 flex flex-col justify-between text-center text-white rounded-lg flex-grow">
+          <div>
+            <h3 class="text-2xl font-bold text-shadow-lg">From Struggles to Success</h3>
+            <p class="mt-2 text-base text-shadow-lg font-bold">
+              Overcoming challenges to create a brighter future for the next generation.
             </p>
           </div>
+          <a href="#" class="py-4 px-8 border-2 border-white text-lg font-medium text-white rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-red-500 hover:border-red-500 mt-4">
+            Read More
+          </a>
         </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Footer (reuse the same footer code from the homepage) -->
-  
-  
-  <!-- Footer (reuse the same footer code from the homepage) -->
-  
-  </body>
+  </div>
+</section>
+
+
+<!-- Footer (reuse from homepage) -->
+<footer class="bg-[#f4f3f0] text-gray-900 py-16 px-12">
+  <div class="max-w-7xl mx-auto">
+    <!-- Footer Content: 3 Columns -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      
+      <!-- Column 1: Logo and Social Media Links -->
+      <div class="flex flex-col items-center md:items-start">
+        <div class="mb-6">
+          <img src="/static/logo.png" alt="Logo" class="h-16 transform hover:scale-105 transition duration-300">
+        </div>
+        
+        <div class="flex space-x-6 mt-4 font-lora">
+          <a href="https://web.facebook.com/people/Instruct-Space-Initiative/61568197526005/?mibextid=LQQJ4d&rdid=pkPYeHt93Wnsb3L1&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2FNDYmZseB5ATHvRLB%2F%3Fmibextid%3DLQQJ4d%26_rdc%3D1%26_rdr" target="_blank" class="text-gray-800 hover:text-blue-600 transform hover:scale-110 transition duration-300">
+            <i class="fab fa-facebook-f text-3xl"></i>
+          </a>
+          <a href="https://x.com/instruct_space" target="_blank" class="text-gray-800 hover:text-blue-400 transform hover:scale-110 transition duration-300">
+            <i class="fab fa-twitter text-3xl"></i>
+          </a>
+          <a href="https://www.instagram.com/instruct_space/" target="_blank" class="text-gray-800 hover:text-pink-500 transform hover:scale-110 transition duration-300">
+            <i class="fab fa-instagram text-3xl"></i>
+          </a>
+          <a href="https://www.tiktok.com/@instruct.space?_t=8qz7OenAxzJ&_r=1" target="_blank" class="text-gray-800 hover:text-blue-700 transform hover:scale-110 transition duration-300">
+            <i class="fab fa-tiktok text-3xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation Links -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Quick Links</h3>
+        <ul class="space-y-4">
+          <li><a href="/about.html" class="font-lora hover:text-blue-500 transform hover:translate-x-2 transition duration-300">About Us</a></li>
+          <li><a href="/team.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">Our Team</a></li>
+          <li><a href="/stories.html" class="font-lora text-gray-700 hover:text-blue-500 transform hover:translate-x-2 transition duration-300">News and Stories</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Call to Action -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4 transform hover:translate-x-2 transition duration-300">
+          Join the Movement of Change
+        </h3>
+        <p class="font-lora text-lg text-gray-700 mb-4 leading-relaxed opacity-80">
+          Be a part of a global movement that is helping children grow securely and thrive.
+        </p>
+        <a href="/about.html" class="font-lora py-4 px-8 border-2 border-black text-lg font-medium text-black rounded-tr-xl rounded-bl-xl transition duration-300 flex items-center justify-center hover:bg-blue-500 hover:border-blue-500">
+          About us
+        </a>
+      </div>
+    
+
+    </div>
+
+    <!-- Footer Bottom Text Section -->
+    <div class="text-center mt-10">
+      <p class="text-sm text-gray-600 opacity-70">© 2025 Instruct Space. All Rights Reserved.</p>
+      <p class="text-sm text-gray-600 opacity-70">Privacy Policy | Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+
+    function handleScroll() {
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          card.classList.add("opacity-100", "translate-y-0");
+          card.style.transitionDelay = `${index * 150}ms`; // Stagger the transition
+        }
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once in case cards are already in view
+  });
+</script>
+
+</body>
+</html>
